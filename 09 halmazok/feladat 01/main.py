@@ -24,5 +24,31 @@ def elemSzamBekerese()-> int:
         
     return eredmeny
 
+def listaFelotleseRandomSzamokkal(elem:int)->List[int]:
+
+    eredmeny:List[int] = []
+    for i in range(elem):
+        eredmeny.append(random.randint(-10,10))
+        time.sleep(0.005)
+    
+    return eredmeny
+
+def halmazKiirasa(kiirandoHalmaz:List[int])->None:
+    for item in kiirandoHalmaz:
+        print(f"{item}", end="\t")
+
+def halmazKiirasaFordítva(kiirandoHalmaz:List[int])->None:
+    max:int=len(kiirandoHalmaz)-1
+    for index in range(max, -1, -1):
+         print(f"{kiirandoHalmaz[index]}", end="\t")
 
 elemekSzama=elemSzamBekerese()
+halmaz=listaFelotleseRandomSzamokkal(elemekSzama)
+
+os.system("cls")
+print("A halmaz elemei: \n")
+halmazKiirasa(halmaz)
+
+#írassuk ki a tartalmát fordított sorrendbe
+print("A halmaz elemei fordított sorrendbe: \n")
+halmazKiirasaFordítva(halmaz)
