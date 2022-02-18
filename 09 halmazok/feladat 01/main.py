@@ -8,6 +8,7 @@ elemekSzama:int=None
 osszeg:int=None
 ketjegyuSzamok:int=None
 paratlanSzamokOsszege:int=None
+nullaraVegzodoSzamok=None
 
 def hiba(szoveg)->None:
     print(szoveg)
@@ -73,10 +74,27 @@ def egyjegyuSzamok(keresesHalmaza:List[int])->int:
 def paratlanSzamok(keresesHalamz:List[int])->int:
     eredmeny:int=0
     for item in keresesHalamz:
-        if(item%2==1)
-        eredmeny+=item
+        if(item%2==1):
+            eredmeny+=item
     return eredmeny
  
+def nullaraVegzodoSzamokSzama(keresesHalmaz:List[int])->int:
+    eredmeny:int=0
+    for item in keresesHalmaz:
+        if(item %10==0):
+            eredmeny+=1
+    return eredmeny
+
+def novekvoSorrend(keresesHalmaz:List[int])->List[int]: 
+    temp:int=None
+    for i in range(0, len(keresesHalmaz)-1,1):
+        for j in range(i +1, len(keresesHalmaz), 1):
+            if(keresesHalmaz[j] < keresesHalmaz[i]):
+                temp=keresesHalmaz[i]
+                keresesHalmaz[i]=keresesHalmaz[j]
+                keresesHalmaz[j]=temp
+    return keresesHalmaz
+
 elemekSzama=elemSzamBekerese()
 halmaz=listaFelotleseRandomSzamokkal(elemekSzama)
 
@@ -104,8 +122,15 @@ ketjegyuSzamok=ketjegyuSzamokSzama(halmaz)
 print(f"\nA halmazban lévő ketjegyű számok száma: {ketjegyuSzamok}")
 
 #egyejegyu szamok szama
+print(f"\nA halmazban lévő egyjegyű számok:")
 egyjegyuSzamok(halmaz)
-print(f"\nA halmazban lévő egyjegyű számok: {egyjegyuSzamok}")
+ 
 
 paratlanSzamokOsszege=paratlanSzamok(halmaz)
-print(f"\nA halmaz elemeinek osszege: {par}
+print(f"\nA halmaz elemeinek osszege: {paratlanSzamokOsszege}")
+
+nullaraVegzodoSzamok = nullaraVegzodoSzamokSzama(halmaz)
+print(f"\nA halmazban {nullaraVegzodoSzamok} db nullára végződő szám van.")
+
+rendezettHalmaz:List[int]=novekvoSorrend(halmaz)
+print(rendezettHalmaz)
