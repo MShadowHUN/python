@@ -9,6 +9,8 @@ osszeg:int=None
 ketjegyuSzamok:int=None
 paratlanSzamokOsszege:int=None
 nullaraVegzodoSzamok=None
+max:int=None
+minIndex:int=None
 
 def hiba(szoveg)->None:
     print(szoveg)
@@ -95,6 +97,24 @@ def novekvoSorrend(keresesHalmaz:List[int])->List[int]:
                 keresesHalmaz[j]=temp
     return keresesHalmaz
 
+def legnagyobbErtek(keresesHalmaz:List[int])->int:
+    maximum:int=keresesHalmaz[0]
+    for index in range(1, len(keresesHalmaz)):
+        if(keresesHalmaz[index] > maximum):
+            maximum=keresesHalmaz[index]
+    
+    return maximum
+
+def legkisebbErtekIndexe(keresesHalmaz:List[int])->int:
+    index:int=0
+    minimum:int=keresesHalmaz[index]
+
+    for i in range(1, len(keresesHalmaz)):
+        if(keresesHalmaz[index] < minimum):
+            minimum=keresesHalmaz[i]
+            index=i
+    
+    return index
 elemekSzama=elemSzamBekerese()
 halmaz=listaFelotleseRandomSzamokkal(elemekSzama)
 
@@ -134,3 +154,9 @@ print(f"\nA halmazban {nullaraVegzodoSzamok} db nullára végződő szám van.")
 
 rendezettHalmaz:List[int]=novekvoSorrend(halmaz)
 print(rendezettHalmaz)
+
+max=legnagyobbErtek(halmaz)
+print(f"\nA halmaz legnagyobb értéke: {max}")
+
+minIndex=legkisebbErtekIndexe(halmaz)
+print(f"\nA halmaz legkisebb értékének helye: {minIndex}")
