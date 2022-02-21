@@ -29,6 +29,14 @@ def hatosokszama(bejarandoHalmaz:List[int])->int:
     
     return eredmeny
 
+def paratlanSzamokSzama(bejarando:List[int])->int:
+    eredmeny:int=0
+    for szam in bejarando:
+        if(szam%2==0):
+            eredmeny +=1
+    
+    return eredmeny
+
 halmaz=halmazFeltoltes()
 print(halmaz)
 osszeg=sum(halmaz)
@@ -36,3 +44,5 @@ atlag=osszeg/7
 print(f"\nDobások átlaga: {atlag}")
 hatos=hatosokszama(halmaz)
 print(f"\n {hatos} db-szor dobtunk hatos")
+paratlan=paratlanSzamokSzama(halmaz)
+print(f"\n {paratlan} db páratlan szám van")
