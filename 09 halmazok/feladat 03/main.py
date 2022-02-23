@@ -6,6 +6,7 @@ osszeg:int=None
 atlag:float=None
 hatos:int=0
 paratlan:int=0
+max:Dict[int,int]=[]
 
 def halmazFeltoltes()->List[int]:
     eredmeny:List[int]=[]
@@ -37,6 +38,14 @@ def paratlanSzamokSzama(bejarando:List[int])->int:
     
     return eredmeny
 
+def maximum(bejarando:List[int])->Dict[int,int]:
+    eredmeny:Dict[int,int]=[]
+    for szam in bejarando:
+        if(dic.has_key(szam)):
+            dic[szam]+1
+        else:
+            dic.add(szam, 1)
+
 halmaz=halmazFeltoltes()
 print(halmaz)
 osszeg=sum(halmaz)
@@ -46,3 +55,6 @@ hatos=hatosokszama(halmaz)
 print(f"\n {hatos} db-szor dobtunk hatos")
 paratlan=paratlanSzamokSzama(halmaz)
 print(f"\n {paratlan} db páratlan szám van")
+
+max=maximum(halmaz)
+print(max)
