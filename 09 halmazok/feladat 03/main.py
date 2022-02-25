@@ -6,7 +6,6 @@ osszeg:int=None
 atlag:float=None
 hatos:int=0
 paratlan:int=0
-max:Dict[int,int]=[]
 
 def halmazFeltoltes()->List[int]:
     eredmeny:List[int]=[]
@@ -38,13 +37,34 @@ def paratlanSzamokSzama(bejarando:List[int])->int:
     
     return eredmeny
 
-def maximum(bejarando:List[int])->Dict[int,int]:
-    eredmeny:Dict[int,int]=[]
+def legnagyobbKulcsErteke(szotar:Dict[int, int])->List[int]:
+    kulcs:int=None
+    ertek:int=0
+    eredmeny:List[int]=[]
+
+    #a legnagyobb ertek kikeresese a szotarbol ertek alapjan
+    for key, value in szotar.items(): #vegiglepkedunk a szotar ossz elemen a kulcs-ertek parokkal
+        if(szotar[key] > ertek):
+            kulcs=key
+            ertek=szotar[key]
+
+    for key,value in szotar.items: #kikeressuk azokat a kulcsokat melyeknek az erteke egyenlo az ertek valtozoval, mivel azok a kulcsok (dobasok) szama fordul elo a legtobbszor
+        if(szotar[key]==ertek):
+            eredmeny.append(key)
+    return eredmeny
+
+def legtobbetEloforduloSzam(bejarando:List[int])->List[int]:
+    szotar:Dict[int,int]={} #Dict[kulcs->szam, value->szam elofordulasi szama]
+    #meghatarozzuk az elofordulasi szamoket
     for szam in bejarando:
-        if(dic.has_key(szam)):
-            dic[szam]+1
+        if(szam in szotar):
+            szotar[szam] +=1 #szotar[szam]-> a kulcshoz tartozo erteket adja vissza
         else:
-            dic.add(szam, 1)
+            szotar[szam]=1
+    #lista =[2,4,1,1,6,3,5]
+    #szotar={1:2, 2:1, 3:1, 4:1, 5:1, 6:1}
+    eredmeny:List[int]=legnagyobbKulcsErteke(szotar)
+    return eredmeny
 
 halmaz=halmazFeltoltes()
 print(halmaz)
@@ -56,5 +76,5 @@ print(f"\n {hatos} db-szor dobtunk hatos")
 paratlan=paratlanSzamokSzama(halmaz)
 print(f"\n {paratlan} db páratlan szám van")
 
-max=maximum(halmaz)
-print(max)
+legtobbetEloforduloSzamok:List[int]=legtobbetEloforduloSzam(halmaz)
+print(f"\n A legtobbet elofordulo szam(ok): {legtobbetEloforduloSzamok}")
