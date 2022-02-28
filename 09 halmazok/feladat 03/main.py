@@ -48,7 +48,7 @@ def legnagyobbKulcsErteke(szotar:Dict[int, int])->List[int]:
             kulcs=key
             ertek=szotar[key]
 
-    for key,value in szotar.items: #kikeressuk azokat a kulcsokat melyeknek az erteke egyenlo az ertek valtozoval, mivel azok a kulcsok (dobasok) szama fordul elo a legtobbszor
+    for key,value in szotar.items(): #kikeressuk azokat a kulcsokat melyeknek az erteke egyenlo az ertek valtozoval, mivel azok a kulcsok (dobasok) szama fordul elo a legtobbszor
         if(szotar[key]==ertek):
             eredmeny.append(key)
     return eredmeny
