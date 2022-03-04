@@ -54,3 +54,9 @@ print(nagyHalmaz)
 
 osszeFuzotthalmaz=listaOsszefuzes(kisHalmaz, nagyHalmaz)
 print(f"\nA két halmaz összefűzve: {osszeFuzotthalmaz}")
+
+novekvo(osszeFuzotthalmaz)
+print(osszeFuzotthalmaz)
+
+atlag= summ(osszeFuzotthalmaz) / len(osszeFuzotthalmaz)
+print(f"A halmza elemeinek átlaga: {atlag}")
