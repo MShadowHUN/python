@@ -43,6 +43,24 @@ def listaOsszefuzes(halmaz1:List[int], halmaz2:List[int])->List[int]:
     
     return eredmeny
 
+def novekvo(bejarando:List[int])->None:
+    temp:int=None
+    for i in range(0, len(bejarando)-1,1):
+        for j in range(i+1, len(bejarando), 1):
+          if(bejarando[j] <bejarando[i]):
+              temp=bejarando[i]
+              bejarando[i]=bejarando[j]
+              bejarando[j]=temp
+
+
+def summ(bejarando:List[int])->int:
+    eredmeny:int=0
+
+    for szam in bejarando:
+        eredmeny +=szam
+    return eredmeny
+
+
 elemszam=szamBeolvasasa(1,5)
 kisHalmaz=halmazFeltoltes(elemszam)
 
