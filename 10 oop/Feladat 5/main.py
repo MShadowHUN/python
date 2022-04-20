@@ -25,3 +25,6 @@ print(csapat)
 
 print("A legtöbb pontszammal rendelkező játékos:\n")
 print(csapat.legjobbJatekos())
+
+novekvoSorrend:List[Jatekos]=jatekosok.copy
+print("Mezszám szerint növekvő sorrendbe:")

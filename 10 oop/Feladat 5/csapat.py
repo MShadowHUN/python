@@ -14,6 +14,7 @@ class Csapat:
             output +=f"\t - {str(jatekos)}\n"
 
         return output
+    
     def legjobbJatekos(self)->Jatekos:
         max:Jatekos=self.jatekosok[0]
 
@@ -22,3 +23,12 @@ class Csapat:
                 max=self.jatekosok[i]
         
         return max
+
+    def novekvoSorrend(self)->List[Jatekos]:
+         temp:int=None
+        for i in range(0, len(bejarando)-1,1):
+            for j in range(i+1, len(bejarando), 1):
+            if(bejarando[j] <bejarando[i]):
+                temp=bejarando[i]
+                bejarando[i]=bejarando[j]
+                bejarando[j]=temp
