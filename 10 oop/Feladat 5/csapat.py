@@ -14,3 +14,11 @@ class Csapat:
             output +=f"\t - {str(jatekos)}\n"
 
         return output
+    def legjobbJatekos(self)->Jatekos:
+        max:Jatekos=self.jatekosok[0]
+
+        for i in range(1,len(self.jatekosok)):
+            if(self.jatekosok[i].pontszam > max.pontszam):
+                max=self.jatekosok[i]
+        
+        return max
