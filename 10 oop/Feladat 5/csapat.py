@@ -25,10 +25,10 @@ class Csapat:
         return max
 
     def novekvoSorrend(self)->List[Jatekos]:
-         temp:int=None
-        for i in range(0, len(bejarando)-1,1):
-            for j in range(i+1, len(bejarando), 1):
-            if(bejarando[j] <bejarando[i]):
-                temp=bejarando[i]
-                bejarando[i]=bejarando[j]
-                bejarando[j]=temp
+        temp:int=None
+        for i in range(0, len(self.jatekosok)-1,1):
+            for j in range(i+1, len(self.jatekosok), 1):
+                if(self.jatekosok[j] <self.jatekosok[i]):
+                    temp=self.jatekosok[i]
+                    self.jatekosok[i]=self.jatekosok[j]
+                    self.jatekosok[j]=temp

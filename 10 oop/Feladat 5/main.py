@@ -1,3 +1,4 @@
+import imp
 from szekhely import Szekhely
 from jatekos import Jatekos
 from csapat import Csapat
@@ -26,5 +27,7 @@ print(csapat)
 print("A legtöbb pontszammal rendelkező játékos:\n")
 print(csapat.legjobbJatekos())
 
-novekvoSorrend:List[Jatekos]=jatekosok.copy
+novekvo:List[Jatekos]=jatekosok.copy
 print("Mezszám szerint növekvő sorrendbe:")
+novekvoSorrend(novekvo)
+print(novekvo)
