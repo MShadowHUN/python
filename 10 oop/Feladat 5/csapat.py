@@ -31,5 +31,5 @@ class Csapat:
                 if(self.jatekosok[j].mezszam <self.jatekosok[i].mezszam):
                     temp=self.jatekosok[i]
                     self.jatekosok[i]=self.jatekosok[j]
-                    self.jatekosok[j]=temp
+                    self.jatekosok[j]
         return self
