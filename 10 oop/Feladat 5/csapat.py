@@ -24,11 +24,12 @@ class Csapat:
         
         return max
 
-    def novekvoSorrend(self)->List[Jatekos]:
-        temp:int=None
+    def novekvoSorrend(self)->None:
+        temp=self.jatekosok.copy()
         for i in range(0, len(self.jatekosok)-1,1):
             for j in range(i+1, len(self.jatekosok), 1):
-                if(self.jatekosok[j] <self.jatekosok[i]):
+                if(self.jatekosok[j].mezszam <self.jatekosok[i].mezszam):
                     temp=self.jatekosok[i]
                     self.jatekosok[i]=self.jatekosok[j]
                     self.jatekosok[j]=temp
+        return self
