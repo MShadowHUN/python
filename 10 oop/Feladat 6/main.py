@@ -6,4 +6,4 @@ dcSzuperhos:Szuperhos=Szuperhos("Batman")
 print(marvelSzuperhos)
 print(dcSzuperhos)
 
-print(szuperhos.tamad(dcSzuperhos))
+print(marvelSzuperhos.tamad(dcSzuperhos))
