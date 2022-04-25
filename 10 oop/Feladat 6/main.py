@@ -6,4 +6,7 @@ dcSzuperhos:Szuperhos=Szuperhos("Batman")
 print(marvelSzuperhos)
 print(dcSzuperhos)
 
-print(marvelSzuperhos.tamad(dcSzuperhos))
+if(marvelSzuperhos.tamad(dcSzuperhos)):
+    print("Legyőzi")
+else:
+    print("Nem győzi le")
