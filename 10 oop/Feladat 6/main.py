@@ -7,6 +7,6 @@ print(marvelSzuperhos)
 print(dcSzuperhos)
 
 if(marvelSzuperhos.tamad(dcSzuperhos)):
-    print("Legyőzi")
+    print("Legyőzi Vasember Batmant")
 else:
-    print("Nem győzi le")
+    print("Nem győzi le Vasember Batmant")
