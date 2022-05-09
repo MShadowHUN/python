@@ -12,7 +12,7 @@ class DiakIO:
         oneLine:str=None
         allLines:List[str]=[]
         try:
-            with open(fileName, encoding='utf-8', mode="r") as file:
+            with open(fileName, encoding='utf-7', mode="r") as file:
                 for line in file:
                     oneLine=line.strip()
                     allLines.append(oneLine)
