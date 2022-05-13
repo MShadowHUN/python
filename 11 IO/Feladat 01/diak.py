@@ -6,5 +6,3 @@ class Diak:
 
     def __str__(self)->str:
         return f"{self.nev}:{self.atlag}"
-
-    
