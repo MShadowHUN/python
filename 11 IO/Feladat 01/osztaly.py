@@ -1,5 +1,6 @@
 from typing import *
 from diak import Diak
+from diakio import DiakIO
 
 class Osztaly:
     @staticmethod
@@ -27,3 +28,12 @@ class Osztaly:
                 joDiakok.append(diakok[i])
 
         return joDiakok
+
+    @staticmethod
+    def atlagfelett(diakok:List[Diak],atlag:float)->None:
+        atlagFelettiek:List[Diak]=[]
+        for diak in diakok:
+            if(diak.atlag > atlag):
+                atlagFelettiek.append(diak)
+        
+        DiakIO.write("atlagfelettiek.txt", diakok)

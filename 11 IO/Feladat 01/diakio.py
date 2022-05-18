@@ -1,3 +1,4 @@
+from encodings import utf_8
 from statistics import mode
 from diak import Diak
 from typing import *
@@ -41,3 +42,15 @@ class DiakIO:
 
 
         return diakok
+    
+    @staticmethod
+    def write(fileName:str, diakok:List[Diak])->None:
+        try:
+            here: str = os.path.dirname(os.path.abspath(__file__))
+            path: str = os.path.join(here, fileName)
+
+            with open (fileName,encoding='latin-1', mode="w") as file:
+                for diak in diakok:    
+                    file.write(f"{diak.nev}\t{diak.atlag}\n")
+        except Exception as ex:
+            print(f"{ex}")

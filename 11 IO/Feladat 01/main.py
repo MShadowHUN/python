@@ -21,3 +21,5 @@ print(f"Az osztály legjobb diákjai:")
 for diak in joDiakok:
     print(f"{diak}\n")
 
+Osztaly.atlagfelett(diakok, atlag)
+print("Az osztályba átlag feletti diákok exportja megtörtént")
