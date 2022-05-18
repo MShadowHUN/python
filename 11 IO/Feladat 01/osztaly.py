@@ -36,4 +36,4 @@ class Osztaly:
             if(diak.atlag > atlag):
                 atlagFelettiek.append(diak)
         
-        DiakIO.write("atlagfelettiek.txt", diakok)
+        DiakIO.write("atlagfelettiek.txt", atlagFelettiek)
