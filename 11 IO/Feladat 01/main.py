@@ -23,3 +23,9 @@ for diak in joDiakok:
 
 Osztaly.atlagfelett(diakok, atlag)
 print("Az osztályba átlag feletti diákok exportja megtörtént")
+
+vanE:bool=Osztaly.vanEkitunoTanulo(diakok)
+if(vanE):
+    print("Van kitűnő tanuló")
+else:
+    print("Nincs kitűnő tanuló ")

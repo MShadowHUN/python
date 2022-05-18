@@ -1,4 +1,5 @@
 from typing import *
+from xmlrpc.client import boolean
 from diak import Diak
 from diakio import DiakIO
 
@@ -37,3 +38,13 @@ class Osztaly:
                 atlagFelettiek.append(diak)
         
         DiakIO.write("atlagfelettiek.txt", atlagFelettiek)
+
+    @staticmethod
+    def vanEkitunoTanulo(diakok:List[Diak])->boolean:
+        vanE:boolean=False
+
+        for diak in diakok:
+            if(diak.atlag==5.00):
+                vanE=True
+                break
+        return vanE
