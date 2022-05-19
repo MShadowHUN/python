@@ -1,3 +1,4 @@
+from multiprocessing.sharedctypes import Value
 from typing import *
 from xmlrpc.client import boolean
 from diak import Diak
@@ -48,3 +49,26 @@ class Osztaly:
                 vanE=True
                 break
         return vanE
+    
+    @staticmethod
+    def jegyek(diakok:List[Diak])->Dict[str, int]:
+        eredmeny:Dict[str,int]={
+            "elégtelen":0,
+            "elégséges":0,
+            "közepes":0,
+            "jó":0,
+            "kitűnő":0
+        }
+        
+        for diak in diakok:
+            if(diak.atlag < 2):
+                eredmeny["elégtelen"]+=1
+            elif(diak.atlag < 3):
+                eredmeny["elégséges"]+=1
+            elif(diak.atlag < 4):
+                eredmeny["közepes"]+=1
+            elif(diak.atlag < 5):
+                eredmeny["jó"]+=1
+            else:
+                eredmeny["kitűnő"]+=1
+        return eredmeny

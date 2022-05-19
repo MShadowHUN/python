@@ -29,3 +29,7 @@ if(vanE):
     print("Van kitűnő tanuló")
 else:
     print("Nincs kitűnő tanuló ")
+
+eredmenyek:Dict[str,int]=Osztaly.jegyek(diakok)
+
+print(f"{eredmenyek}")
