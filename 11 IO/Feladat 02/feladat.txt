@@ -1,0 +1,17 @@
+A konyvek.txt állományban az adatok a következő módón vannak tárolva:
+
+Vezetéknév (íróé),
+Keresztnév (íróé),
+SzületésiDátum,
+Cím,
+ISBN,
+Kiadó,
+KiadvasiÉv,
+ár,
+Téma,
+Oldalszám,
+Honorárium (amit a könyvért kapott az író)
+
+Írjuk ki a képernyőre az össz adatot
+Keressük ki az informatika témajú könyveket és mentsük el őket az informatika.txt állömányba
+Az 1900.txt állományba mentsük el azokat a könyveket amelyek az 1900-as években íródtak
