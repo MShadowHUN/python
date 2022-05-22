@@ -50,6 +50,7 @@ class Osztaly:
                 break
         return vanE
     
+
     @staticmethod
     def jegyek(diakok:List[Diak])->Dict[str, int]:
         eredmeny:Dict[str,int]={
@@ -72,3 +73,28 @@ class Osztaly:
             else:
                 eredmeny["kitűnő"]+=1
         return eredmeny
+    
+    
+    @staticmethod
+    def masikjegyek(diakok:List[Diak])->Dict[str, int]:
+        eredmeny:Dict[str,int]={}
+        alsoHatarertek:int=0
+        hatarertekek:Dict[str, int]={
+        "elégtelen":2,
+        "elégséges":3,
+        "közepes":4,
+        "jó":5,
+        "kitűnő":6,
+        }
+
+        for (key, value) in hatarertekek.items():
+            darab:int=0
+
+            for diak in diakok:
+                if(diak.atlag >= alsoHatarertek and diak.atlag < value):
+                    darab+=1
+            eredmeny[key]=darab    
+            alsoHatarertek= value        
+    
+        return eredmeny
+    

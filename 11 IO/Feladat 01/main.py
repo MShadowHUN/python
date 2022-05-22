@@ -30,6 +30,11 @@ if(vanE):
 else:
     print("Nincs kitűnő tanuló ")
 
+
 eredmenyek:Dict[str,int]=Osztaly.jegyek(diakok)
 
 print(f"{eredmenyek}")
+
+eredmenyek2:Dict[str,int]=Osztaly.masikjegyek(diakok)
+for (key,value) in eredmenyek2.items():
+    print(f"\t-{key} : {value}")
