@@ -15,3 +15,9 @@ print("Az ütő játékosok exportja megtörtént")
 
 Csapat.csapatok(jatekosok)
 print("Csapatok szerinti export megtörtént")
+
+Csapat.atlagmagassag(jatekosok)
+print("Átlagnál magasabbak exportja megtörtént")
+
+Csapat.atlagmagassagalatt(jatekosok)
+print("Átlagnál alacsonyabbak kigyűjtése megtörtént")

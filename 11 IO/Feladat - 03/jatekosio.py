@@ -6,9 +6,6 @@ import io
 import os
 
 class JatekosIO:
-    def __init__(self) -> None:
-        super().__init__()
-
     @staticmethod
     def read(fileName:str)->List[Jatekos]:
         oneLine:str=None
@@ -51,5 +48,17 @@ class JatekosIO:
             with open (fileName,encoding='latin-1', mode="w") as file:
                 for jatekos in jatekosok:    
                     file.write(f"{jatekos.nev}\t{jatekos.magassag}\t{jatekos.poszt}\t{jatekos.nemzetiseg}\t{jatekos.csapat}\t{jatekos.orszag}\n")
+        except Exception as ex:
+            print(f"{ex}")
+
+    @staticmethod
+    def writea(fileName:str, jatekosok:List[Jatekos],atlag:float)->None:
+        try:
+            here: str = os.path.dirname(os.path.abspath(__file__))
+            path: str = os.path.join(here, fileName)
+
+            with open (fileName,encoding='latin-1', mode="w") as file:
+                for jatekos in jatekosok:    
+                    file.write(f"{jatekos.nev}\t{jatekos.magassag}\t{atlag-jatekos.magassag: 1.2f}\n")
         except Exception as ex:
             print(f"{ex}")
