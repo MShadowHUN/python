@@ -11,7 +11,6 @@ class Csapat:
         for jatekos in jatekosok:
             if(jatekos.poszt=="ütő"):
                 uto.append(jatekos)
-        
         JatekosIO.write("utok.txt", uto)
     
     @staticmethod
@@ -46,14 +45,46 @@ class Csapat:
         osszeg:int=0
         atlagalattiak:List[Jatekos]=[]
         for jatekos in jatekosok:
-            jatekos.magassag+=osszeg
+            osszeg+=int(jatekos.magassag)
         
         atlag=osszeg/len(jatekosok)
         for jatekos in jatekosok:
-            if(jatekos.magassag < atlag):
+            if(int(jatekos.magassag) < atlag):
                 atlagalattiak.append(jatekos)
         JatekosIO.writea("atlagnalmagasabbak.txt", atlagalattiak,atlag)
-        
-    
 
+    @staticmethod
+    def magassagnov(jatekosok:List[Jatekos])->None:
+        temp:int=None
+
+        for i in range(0, len(jatekosok)-1,1):
+            for j in range(i+1,len(jatekosok),1):
+                if(jatekosok[j].magassag>jatekosok[i].magassag):
+                    temp=jatekosok[i].magassag
+                    jatekosok[i].magassag=jatekosok[j].magassag
+                    jatekosok[j].magassag=temp
+        JatekosIO.write("magaslatok.txt", jatekosok)
+
+
+    @staticmethod
+    def nemzetisegek(jatekosok:List[Jatekos])->None:
+        nemzetiseg:Dict[str,int]={}
+        hozzadandoszoveg:str=""
+        nemzetisegnev:str=""
+        for jatekos in jatekosok:
+            nemzetisegnev=jatekos.nemzetiseg
+            if(nemzetisegnev in nemzetiseg.keys()):
+                nemzetiseg[nemzetisegnev]+=1
+        JatekosIO.write("nemzetiseg.txt", nemzetiseg)
+
+    @staticmethod
+    def posztok(jatekosok:List[Jatekos])->None:
+        posztok:Dict[str,int]={}
+        hozzadandoszoveg:str=""
+        poszt:str=""
+        for jatekos in jatekosok:
+            poszt=jatekos.poszt
+            if(poszt in posztok.keys()):
+                posztok[poszt]+=int(jatekos.magassag)
+        JatekosIO.write("posztok.txt", posztok)
       

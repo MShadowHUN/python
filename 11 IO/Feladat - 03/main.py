@@ -21,3 +21,12 @@ print("Átlagnál magasabbak exportja megtörtént")
 
 Csapat.atlagmagassagalatt(jatekosok)
 print("Átlagnál alacsonyabbak kigyűjtése megtörtént")
+
+Csapat.magassagnov(jatekosok)
+print("Játékosok magasság szerinti növekvő sorrendbe való kiírása megtörtént")
+
+Csapat.nemzetisegek(jatekosok)
+print("Nemzetiség szerinti képviselet exprojta megtörtént")
+
+Csapat.posztok(jatekosok)
+print("Játéksok összmagasságának poszt szerinti rendezés exportja megtörtént")
