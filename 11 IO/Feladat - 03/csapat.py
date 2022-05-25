@@ -9,19 +9,22 @@ class Csapat:
     def utok(jatekosok:List[Jatekos])->None:
         uto:List[Jatekos]=[]
         for jatekos in jatekosok:
-            if(jatekos.poszt=="ütő"):
+            if(jatekos.poszt=="Ã¼tÅ\x91"):
                 uto.append(jatekos)
         JatekosIO.write("utok.txt", uto)
     
     @staticmethod
     def csapatok(jatekosok:List[Jatekos])->None:
         csapatok:Dict[str,List[str]]={}
-        hozzadandoszoveg:str=""
         csapatnev:str=""
+        csapatkulcsok:Set[str]=set()
         for jatekos in jatekosok:
-            csapatnev=jatekos.csapat
-            if(csapatnev in csapatok.keys()):
-                csapatok[csapatnev].append(jatekos)
+            csapatkulcsok.add(jatekos.csapat)
+
+        for csapatnev in csapatkulcsok:
+            for jatekos in jatekosok:
+                if(csapatnev==jatekos.csapat):
+                    csapatok[csapatnev].append(jatekos.nev)
 
         JatekosIO.write("csapattagok.txt", csapatok)
 
