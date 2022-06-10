@@ -18,8 +18,13 @@ class Csapat:
         csapatok:Dict[str,List[str]]={}
         csapatnev:str=""
         csapatkulcsok:Set[str]=set()
+        csapattagok:List[str]=[]
         for jatekos in jatekosok:
             csapatkulcsok.add(jatekos.csapat)
+
+        for csapatnev in csapatkulcsok:
+            csapatok[csapatnev].append(csapattagok:List[str]=[])
+
 
         for csapatnev in csapatkulcsok:
             for jatekos in jatekosok:

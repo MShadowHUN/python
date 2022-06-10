@@ -1,0 +1,12 @@
+azer - 2
+magyar - 5
+szerb - 10
+olasz - 13
+orosz - 15
+brazil - 19
+amerikai - 21
+szlovák - 22
+lengyel - 27
+belga - 29
+török - 32
+holland - 34
